@@ -112,6 +112,9 @@ def _validate_config(config: dict, errors: list[str], warnings: list[str]) -> No
         else:
             if search.get("query") is not None and not isinstance(search.get("query"), str):
                 errors.append("config.search.query must be a string")
+            _list_of_strings(errors, search.get("authors"), "config.search.authors")
+            if search.get("author_mode") not in (None, "intersect", "track"):
+                errors.append("config.search.author_mode must be intersect/track")
             if search.get("journal_mode") not in (None, *SEARCH_MODES):
                 errors.append("config.search.journal_mode must be any/only/prefer")
             if search.get("sort") not in (None, *SEARCH_SORTS):

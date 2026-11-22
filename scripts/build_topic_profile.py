@@ -70,6 +70,8 @@ def build(topic: dict) -> dict:
         "biorxiv": {"enabled": True, "max_results": 200, "lookback_days": 2},
         "arxiv": {"enabled": False},
         "trials": {"enabled": True, "max_results": 100, "lookback_days": 2},
+        "conferences": {"enabled": True, "max_results": 50, "lookback_days": 365},
+        "google_news_zh": {"enabled": True, "max_results": 100, "lookback_days": 2},
         "policy": {"enabled": True, "max_results": 100, "lookback_days": 2},
     }
     config = {

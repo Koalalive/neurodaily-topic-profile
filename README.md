@@ -1,4 +1,4 @@
-# NeuroDaily Topic Profile v1.0.0
+# NeuroDaily Topic Profile v1.1.0
 
 An Agent Skill for building a validated [NeuroDaily](https://github.com/Koalalive/neurodaily)
 search profile for a **research topic/field**, not for one named scholar.
@@ -12,6 +12,8 @@ For one PI, lab or research team use
 
 - asks a short, guided sequence of questions
 - turns synonyms, subtopics, exclusions and sources into a boolean query
+- optional `scholars[]` tracking with `author_mode: intersect|track`
+- includes conference and Chinese Google News source presets
 - builds the NeuroDaily profile wrapper
 - validates JSON syntax, schema, enums, URLs, sources and journals
 

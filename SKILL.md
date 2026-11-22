@@ -1,5 +1,5 @@
 ---
-version: 1.0.0
+version: 1.1.0
 name: neurodaily-topic-profile
 description: Guide a user step by step to build a validated NeuroDaily search profile for a research TOPIC or field (for example drug delivery), using synonyms, subtopics, exclusions, sources and journals, then export and validate one portable neurodaily.profile JSON. Use when the user wants a field/topic monitor rather than a profile of one named scholar or lab.
 ---
@@ -69,7 +69,20 @@ If the user is unsure, propose a conservative default and explain the tradeoff.
 Ask for 5–15 field journals or accept a shortlist. Do not invent impact factors or
 JCR/CAS values.
 
-### 5. Windows
+### 5. Optional scholar tracking
+
+Ask whether the user wants to track named scholars alongside the topic. Use the
+scholar's ORCID/affiliation to disambiguate common names.
+
+```json
+"scholars": ["Nolan Williams"],
+"author_mode": "intersect"
+```
+
+- `intersect`: only works matching both topic and scholar
+- `track`: all new works by the scholar, plus topic results
+
+### 6. Windows
 
 Confirm daily and manual lookback windows. Default: daily 36h, manual 240h,
 trials 36h, funding 168h, news 36h.
@@ -83,6 +96,8 @@ Write the interview result as `topic.json`:
   "topic": "drug delivery",
   "aliases": ["drug delivery systems", "controlled release"],
   "subtopics": ["nanoparticles", "liposomes", "mRNA delivery"],
+  "scholars": [],
+  "author_mode": "intersect",
   "mesh_terms": ["Drug Delivery Systems"],
   "exclude": ["veterinary"],
   "sources": {
@@ -91,6 +106,8 @@ Write the interview result as `topic.json`:
     "biorxiv": {"enabled": true, "max_results": 200, "lookback_days": 2},
     "arxiv": {"enabled": false},
     "trials": {"enabled": true, "max_results": 100, "lookback_days": 2},
+    "conferences": {"enabled": true, "max_results": 50, "lookback_days": 365},
+    "google_news_zh": {"enabled": true, "max_results": 100, "lookback_days": 2},
     "policy": {"enabled": true, "max_results": 100, "lookback_days": 2}
   },
   "journals": [

@@ -39,6 +39,8 @@
     ],
     "search": {
       "query": "(\"drug delivery\" OR \"drug delivery systems\" OR \"controlled release\" OR \"drug carriers\" OR \"lipid nanoparticles\" OR liposomes OR \"polymeric nanoparticles\" OR \"mRNA delivery\") AND NOT (veterinary OR \"animal feed\")",
+      "authors": [],
+      "author_mode": "intersect",
       "sets": {},
       "journal_mode": "prefer",
       "journals": [
@@ -72,6 +74,16 @@
         "enabled": false
       },
       "trials": {
+        "enabled": true,
+        "max_results": 100,
+        "lookback_days": 2
+      },
+      "conferences": {
+        "enabled": true,
+        "max_results": 50,
+        "lookback_days": 365
+      },
+      "google_news_zh": {
         "enabled": true,
         "max_results": 100,
         "lookback_days": 2
