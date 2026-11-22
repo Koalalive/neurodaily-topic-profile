@@ -1,0 +1,26 @@
+{
+  "topic": "drug delivery",
+  "profile": "drug-delivery",
+  "aliases": ["drug delivery systems", "controlled release", "drug carriers"],
+  "subtopics": ["lipid nanoparticles", "liposomes", "polymeric nanoparticles", "mRNA delivery", "protein delivery"],
+  "mesh_terms": ["Drug Delivery Systems", "Delayed-Action Preparations"],
+  "exclude": ["veterinary", "animal feed"],
+  "sources": {
+    "journal": {"enabled": true, "max_results": 200, "lookback_days": 2},
+    "pubmed": {"enabled": true, "max_results": 500, "lookback_days": 2},
+    "biorxiv": {"enabled": true, "max_results": 200, "lookback_days": 2},
+    "arxiv": {"enabled": false},
+    "trials": {"enabled": true, "max_results": 100, "lookback_days": 2},
+    "policy": {"enabled": true, "max_results": 100, "lookback_days": 2}
+  },
+  "journals": [
+    {"name": "Journal of Controlled Release"},
+    {"name": "Advanced Drug Delivery Reviews"},
+    {"name": "Biomaterials"},
+    {"name": "International Journal of Pharmaceutics"},
+    {"name": "European Journal of Pharmaceutics and Biopharmaceutics"},
+    {"name": "Drug Delivery"},
+    {"name": "Pharmaceutics"}
+  ],
+  "policy_feeds": []
+}
